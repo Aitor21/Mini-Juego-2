@@ -37,7 +37,7 @@
       this.powerUp = this.add.group();
       this.powerUp.createMultiple(1, 'powerUp');
       this.scoreString = 'Score : ';
-      this.timer = this.add.text(820, 30, 0 + ':'+ 0, { fontSize: '34px', fill: '#fff' });
+      this.timer = this.add.text(920, 30, 0 + ':'+ 0, { fontSize: '34px', fill: '#fff' });
       this.scoreText = this.add.text(10, 30, this.scoreString + this.score, { fontSize: '34px', fill: '#fff' });
       this.player.body.collideWorldBounds = true;
     },
