@@ -73,7 +73,7 @@ gulp.task('connect', connect.server({
   port: 9000,
   livereload: true,
   open: {
-    browser: 'chrome' // if not working on OSX try: 'Google Chrome'
+    browser: 'chromium-browser' // if not working on OSX try: 'Google Chrome'
   }
 }));
 
