@@ -17,6 +17,10 @@
         this.powerUp = null;
         this.timer = null;
         this.lastTime = 1000;
+		this.upKey = null;
+		this.downKey = null;
+		this.leftKey = null;
+		this.rightKey = null;
       
     //this.textStyle = { font: '64px Desyrel', align: 'center'};
     }
@@ -43,10 +47,14 @@
                 this.timer = this.add.text(920, 30, ' : ', { fontSize: '34px', fill: '#fff' });
                 this.scoreText = this.add.text(10, 30, this.scoreString + this.score, { fontSize: '34px', fill: '#fff' });
                 this.player.body.collideWorldBounds = true;
+				this.upKey = this.input.keyboard.addKey(Phaser.Keyboard.UP);
+				this.downKey = this.input.keyboard.addKey(Phaser.Keyboard.DOWN);
+				this.leftKey = this.input.keyboard.addKey(Phaser.Keyboard.LEFT);
+				this.rightKey = this.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
                 //this.physics.startSystem(this.physics.ARCADE);                        // aqui da un error super loco cuando hago que los enemigos sigan al protagonista... ¿Que significa el ARCADE?
             },
             update: function () {
-                if (this.input.keyboard.isDown(Phaser.Keyboard.A)) {
+                if (this.leftKey.isDown) {
                     this.player.x -= 6;
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
@@ -58,7 +66,7 @@
             this.enemy.setAll('this.body.velocity.x', 0);
             this.enemy.setAll('this.body.velocity.x', 0);
           }*/
-                if (this.input.keyboard.isDown(Phaser.Keyboard.D)) {
+                if (this.rightKey.isDown) {
                     this.player.x += 6;
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
@@ -69,7 +77,7 @@
                     this.enemy.setAll('this.body.velocity.x', 0);
                     this.enemy.setAll('this.body.velocity.x', 0);
                 }*/
-                if (this.input.keyboard.isDown(Phaser.Keyboard.S)) {
+                if (this.downKey.isDown) {
                     this.player.y += 6;
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
@@ -79,7 +87,7 @@
                    this.enemy.setAll('this.body.velocity.x', 0);
                    this.enemy.setAll('this.body.velocity.x', 0);
                 }*/
-                if (this.input.keyboard.isDown(Phaser.Keyboard.W)) {
+                if (this.upKey.isDown) {
                     this.player.y -= 6;
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
