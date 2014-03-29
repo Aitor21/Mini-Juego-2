@@ -59,7 +59,8 @@
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
                     //this.enemy.body.velocity.x-=200;
-                    //this.physics.moveToObject(this.enemy, this.player, 200);                  // Consigue el movimiento de los enemigos
+                    //this.physics.moveToObject(this.enemy, this.player, 200);    // Consigue el movimiento de los enemigos
+                    //this.physics.moveToObject(this.enemigos, this.player, 200);
                 }
                 /*else
           {
@@ -72,6 +73,8 @@
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
                     //this.enemy.body.velocity.x-=200;
                     //this.physics.moveToObject(this.enemy, this.player, 200);
+                    //this.physics.moveToObject(this.enemigo, this.player, 200);
+
                 }
                 /*else {
                     this.enemy.setAll('this.body.velocity.x', 0);
@@ -82,6 +85,8 @@
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
                     //this.physics.moveToObject(this.enemy, this.player, 200);
+					//this.physics.moveToObject(this.enemigo, this.player, 200);
+
                 }
                /*else {
                    this.enemy.setAll('this.body.velocity.x', 0);
@@ -92,6 +97,8 @@
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
                     //this.physics.moveToObject(this.enemy, this.player, 200);
+					//this.physics.moveToObject(this.enemigo, this.player, 200);
+
                 }
                /*else {
                    this.enemy.setAll('this.body.velocity.x', 0);
@@ -101,6 +108,8 @@
                 if (this.enemyCheck) {
                     this.enemyCheck.reset(Math.random() * 1024, 1000);
                     this.enemyCheck.body.velocity.y = ((0.5 + Math.random()) * -100);
+                    //this.enemyCheck.body.velocity.x = ((0.5 + Math.random()) * 60);
+
           /*if(this.input.keyboard.isDown(Phaser.Keyboard.A)){
             //this.enemyCheck === this.player;
           }*/
@@ -111,7 +120,7 @@
                 if (this.enemigoCheck) {
                     this.enemigoCheck.reset(Math.random() * 1024, -500);
                     this.enemigoCheck.body.velocity.y = ((0.5 + Math.random()) * 100);
-                    //this.enemigoCheck.body.velocity.x = ((0.5 + Math.random())*60 || -80);
+                    //this.enemigoCheck.body.velocity.x = ((0.5 + Math.random()) * 60);
                 }
 
                 this.powerUpCheck = this.powerUp.getFirstExists(false);
@@ -142,7 +151,7 @@
                     this.minutes = '0' + this.minutes;
                 }
 
-                this.timer.setText(this.minutes + ':' + this.seconds);
+                this.timer.setText(this.minutes + ':' + this.seconds + ':' + this.miliseconds);
                 //this.input.onDown.addOnce(updateText, this);
 
                 /*if (this.seconds ++) {
@@ -154,6 +163,10 @@
                     this.scoreText.content = this.scoreString + this.score;
                     this.lastTime = this.game.time.now + 1000;
                 }
+				/*if (this.seconds >= 5) {
+					this.player.kill();
+				}*/
+				//Clock timer reset
             },
 
             onInputDown: function () {
