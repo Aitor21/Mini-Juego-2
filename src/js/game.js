@@ -43,7 +43,7 @@
                 this.timer = this.add.text(920, 30, ' : ', { fontSize: '34px', fill: '#fff' });
                 this.scoreText = this.add.text(10, 30, this.scoreString + this.score, { fontSize: '34px', fill: '#fff' });
                 this.player.body.collideWorldBounds = true;
-                this.physics.startSystem(Phaser.physics.ARCADE);                        // aqui da un error super loco cuando hago que los enemigos sigan al protagonista... ¿Que significa en ARCADE?
+                //this.physics.startSystem(this.physics.ARCADE);                        // aqui da un error super loco cuando hago que los enemigos sigan al protagonista... ¿Que significa el ARCADE?
             },
             update: function () {
                 if (this.input.keyboard.isDown(Phaser.Keyboard.A)) {
@@ -73,7 +73,7 @@
                     this.player.y += 6;
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
-                    //this.physics.moveToObject(this.enemy,this.player,200);
+                    //this.physics.moveToObject(this.enemy, this.player, 200);
                 }
                /*else {
                    this.enemy.setAll('this.body.velocity.x', 0);
@@ -83,13 +83,12 @@
                     this.player.y -= 6;
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
-                    //this.physics.moveToObject(this.enemy,this.player, 200);
+                    //this.physics.moveToObject(this.enemy, this.player, 200);
                 }
                /*else {
                    this.enemy.setAll('this.body.velocity.x', 0);
                    this.enemy.setAll('this.body.velocity.x', 0);
                 }*/
-        
                 this.enemyCheck = this.enemy.getFirstExists(false);
                 if (this.enemyCheck) {
                     this.enemyCheck.reset(Math.random() * 1024, 1000);

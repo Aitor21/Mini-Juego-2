@@ -16,8 +16,6 @@
       this.load.setPreloadSprite(this.asset);
       this.load.image('player', 'assets/player.png');
       this.load.bitmapFont('minecraftia', 'assets/minecraftia.png', 'assets/minecraftia.xml');
-      //this.load.image('einstein', 'assets/gorda.png');
-
     },
 
     create: function () {
