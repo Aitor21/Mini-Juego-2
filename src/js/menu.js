@@ -31,7 +31,12 @@
 
         onDown: function () {
             this.game.state.start('game');
+			if(this.game.state.start('game')){
+			//this.updateTimer.;
+				console.log('hi');
+	}
         }
+		
     };
 
     window['minijuego-2'] = window['minijuego-2'] || {};
