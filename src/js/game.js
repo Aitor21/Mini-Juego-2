@@ -33,19 +33,19 @@
                 this.input.onDown.add(this.onInputDown, this);
 				
                 this.enemy = this.add.group();
-                this.enemy.createMultiple(6, 'enemy');
+                this.enemy.createMultiple(5, 'enemy');
                 this.enemy.setAll('outOfBoundsKill', true);
 				
                 this.enemigo = this.add.group();
-                this.enemigo.createMultiple(6, 'enemigo');
+                this.enemigo.createMultiple(5, 'enemigo');
                 this.enemigo.setAll('outOfBoundsKill', true);
 
 				this.badEnemys = this.add.group();
-				this.badEnemys.createMultiple(6, 'badEnemys');
+				this.badEnemys.createMultiple(5, 'badEnemys');
                 this.badEnemys.setAll('outOfBoundsKill', true);
 				
 				this.badGuy = this.add.group();
-				this.badGuy.createMultiple(6, 'badGuy');
+				this.badGuy.createMultiple(5, 'badGuy');
 				this.badGuy.setAll('outOfBoundsKill', true);
 
                 this.powerUp = this.add.group();
@@ -66,6 +66,9 @@
                     this.player.x -= 6;
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
+                    this.physics.overlap(this.player, this.badEnemys, function (player) { player.kill(); }, null, this);
+					this.physics.overlap(this.player, this.badGuy, function (player) { player.kill(); }, null, this);
+
 					this.enemyCheck = this.enemy.getFirstExists(false);
 					if (this.enemyCheck) {
 						this.enemyCheck.reset(Math.random() * 1024, 800);
@@ -76,6 +79,8 @@
                     this.player.x += 6;
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
+					this.physics.overlap(this.player, this.badEnemys, function (player) { player.kill(); }, null, this);
+					this.physics.overlap(this.player, this.badGuy, function (player) { player.kill(); }, null, this);
 					this.enemigoCheck = this.enemigo.getFirstExists(false);
 					if (this.enemigoCheck) {
 						this.enemigoCheck.reset(Math.random() * 1024, 0);
@@ -86,6 +91,8 @@
                     this.player.y += 6;
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
+                    this.physics.overlap(this.player, this.badEnemys, function (player) { player.kill(); }, null, this);
+					this.physics.overlap(this.player, this.badGuy, function (player) { player.kill(); }, null, this);
 					this.badEnemyCheck = this.badEnemys.getFirstExists(false);
 					if (this.badEnemyCheck) {
 						this.badEnemyCheck.reset(1000, Math.random() * 1024);
@@ -96,6 +103,8 @@
                     this.player.y -= 6;
                     this.physics.overlap(this.player, this.enemy, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
+                    this.physics.overlap(this.player, this.badEnemys, function (player) { player.kill(); }, null, this);
+					this.physics.overlap(this.player, this.badGuy, function (player) { player.kill(); }, null, this);
 					this.badGuyCheck = this.badGuy.getFirstExists(false);
 					if (this.badGuyCheck) {
 						this.badGuyCheck.reset(0, Math.random() * 1024);
@@ -118,10 +127,10 @@
                 this.milliseconds = Math.floor(this.game.time.now) % 100;
 
                 if (this.milliseconds < 10) {
-                    this.milliseconds = '0' + this.milliseconds;
+                    this.milliseconds = -this.milliseconds;
                 }
                 if (this.seconds < 10) {
-                    this.seconds = '0' + this.seconds;
+                    this.seconds = -this.seconds;
                 }
                 if (this.minutes < 10) {
                     this.minutes = '0' + this.minutes;
