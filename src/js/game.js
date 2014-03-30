@@ -27,7 +27,8 @@
 
             create: function () {
                 var x = this.game.width / 2, y = this.game.height / 2;
-                this.player = this.add.sprite(x, y, 'player');
+				this.player = this.add.sprite(x, y, 'player_up');
+
                 this.player.anchor.setTo(0.5, 0.5);
 				this.player.body.collideWorldBounds = true;
                 this.input.onDown.add(this.onInputDown, this);
@@ -68,7 +69,7 @@
                     this.physics.overlap(this.player, this.enemigo, function (player) { player.kill(); }, null, this);
                     this.physics.overlap(this.player, this.badEnemys, function (player) { player.kill(); }, null, this);
 					this.physics.overlap(this.player, this.badGuy, function (player) { player.kill(); }, null, this);
-
+					
 					this.enemyCheck = this.enemy.getFirstExists(false);
 					if (this.enemyCheck) {
 						this.enemyCheck.reset(Math.random() * 1024, 800);
