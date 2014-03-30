@@ -54,7 +54,7 @@
 				this.powerUp.setAll('outOfBoundsKill', true);
 				
                 this.scoreString = 'Score : ';
-                this.timer = this.add.text(920, 30, ' : ', { fontSize: '34px', fill: '#fff' });
+                this.timer = this.add.text(900, 30, ' : ', { fontSize: '34px', fill: '#fff' });
                 this.scoreText = this.add.text(10, 30, this.scoreString + this.score, { fontSize: '34px', fill: '#fff' });
 				
 				this.upKey = this.input.keyboard.addKey(Phaser.Keyboard.UP);
@@ -128,10 +128,10 @@
                 this.milliseconds = Math.floor(this.game.time.now) % 100;
 
                 if (this.milliseconds < 10) {
-                    this.milliseconds = -this.milliseconds;
+                    this.milliseconds = + this.milliseconds;
                 }
                 if (this.seconds < 10) {
-                    this.seconds = -this.seconds;
+                    this.seconds = + this.seconds;
                 }
                 if (this.minutes < 10) {
                     this.minutes = '0' + this.minutes;
