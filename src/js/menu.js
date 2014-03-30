@@ -13,7 +13,7 @@
 
             this.titleTxt = this.add.bitmapText(x, 100, 'Heart Beat', {font: '72px minecraftia', align: 'center'});
             this.titleTxt.anchor.setTo(0.5, 0.5);
-            this.startButton = this.add.button(this.world.centerX, 300, 'abc', function () {this.game.state.start('game'); }, this, 1, 0);
+            this.startButton = this.add.button(this.world.centerX, 300, 'boton', function () {this.game.state.start('game'); }, this, 1, 0);
             this.startButton.anchor.setTo(0.5, 0.5);
             this.instructionsText = this.add.bitmapText(10, 400, 'Como jugar:', {font: '32px minecraftia', align: 'center'});
             this.instructionsText = this.add.bitmapText(10, 460, 'Controles: las teclas de direcciones controlan al personaje', {font: '20px minecraftia', align: 'center'});

@@ -15,6 +15,11 @@
             this.load.onLoadComplete.addOnce(this.onLoadComplete, this);
             this.load.setPreloadSprite(this.asset);
             this.load.image('player_up', 'assets/mirndo para arriba.png');
+			this.load.image('enemydown', 'assets/enemigo mirando abajo.png');
+			this.load.image('enemyleft', 'assets/enemigo minrando izquierda.png');
+			this.load.image('enemyup', 'assets/enemigo mirando para arriba');
+			this.load.image('enemyright', 'assets/enemigo mirando derecha.png');
+			this.load.spritesheet('boton', 'assets/Buttons.png', 545, 160);
 
 
             this.load.bitmapFont('minecraftia', 'assets/minecraftia.png', 'assets/minecraftia.xml');

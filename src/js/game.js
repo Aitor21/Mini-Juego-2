@@ -34,19 +34,19 @@
                 this.input.onDown.add(this.onInputDown, this);
 				
                 this.enemy = this.add.group();
-                this.enemy.createMultiple(5, 'enemy');
+                this.enemy.createMultiple(5, 'enemyup');
                 this.enemy.setAll('outOfBoundsKill', true);
 				
                 this.enemigo = this.add.group();
-                this.enemigo.createMultiple(5, 'enemigo');
+                this.enemigo.createMultiple(5, 'enemydown');
                 this.enemigo.setAll('outOfBoundsKill', true);
 
 				this.badEnemys = this.add.group();
-				this.badEnemys.createMultiple(5, 'badEnemys');
+				this.badEnemys.createMultiple(5, 'enemyleft');
                 this.badEnemys.setAll('outOfBoundsKill', true);
 				
 				this.badGuy = this.add.group();
-				this.badGuy.createMultiple(5, 'badGuy');
+				this.badGuy.createMultiple(5, 'enemyright');
 				this.badGuy.setAll('outOfBoundsKill', true);
 
                 this.powerUp = this.add.group();
