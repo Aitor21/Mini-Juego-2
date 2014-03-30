@@ -20,6 +20,7 @@
 			this.load.image('enemyup', 'assets/enemigo mirando para arriba');
 			this.load.image('enemyright', 'assets/enemigo mirando derecha.png');
 			this.load.spritesheet('boton', 'assets/Buttons.png', 545, 160);
+			this.load.image('powerup', 'assets/power up.png');
 
 
             this.load.bitmapFont('minecraftia', 'assets/minecraftia.png', 'assets/minecraftia.xml');

@@ -50,7 +50,7 @@
 				this.badGuy.setAll('outOfBoundsKill', true);
 
                 this.powerUp = this.add.group();
-                this.powerUp.createMultiple(1, 'powerUp');
+                this.powerUp.createMultiple(1, 'powerup');
 				this.powerUp.setAll('outOfBoundsKill', true);
 				
                 this.scoreString = 'Score : ';
